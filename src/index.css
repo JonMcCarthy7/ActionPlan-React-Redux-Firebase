@@ -2,6 +2,7 @@ body {
   background: url(/img/geo.jpg) no-repeat;
   background-size: 100%;
   background-color: rgb(53, 53, 60);
+  font-family: "Kanit", sans-serif;
 }
 
 form {
@@ -18,7 +19,7 @@ input[type="text"]:not(.browser-default):focus:not([readonly]),
 input[type="email"]:not(.browser-default):focus:not([readonly]),
 input[type="password"]:not(.browser-default):focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
-  border-color: #0404bd;
+  border-color: #3c3c3c;
   box-shadow: none;
 }
 
@@ -26,5 +27,5 @@ input[type="text"]:not(.browser-default):focus:not([readonly]) + label,
 textarea.materialize-textarea:focus:not([readonly]) + label,
 input[type="email"]:not(.browser-default):focus:not([readonly]) + label,
 input[type="password"]:not(.browser-default):focus:not([readonly]) + label {
-  color: #0404bd !important;
+  color: #3c3c3c !important;
 }
