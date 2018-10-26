@@ -5,14 +5,14 @@ const SignedInLinks = props => {
   return (
     <ul className="right">
       <li>
-        <NavLink to="/">New Project</NavLink>
+        <NavLink to="/create">New Project</NavLink>
       </li>
       <li>
         <NavLink to="/">Log Out</NavLink>
       </li>
       <li>
         {" "}
-        <NavLink to="/" className="btn btn-floating red darken-1">
+        <NavLink to="/" className="btn btn-floating blue darken-1">
           a
         </NavLink>
       </li>
