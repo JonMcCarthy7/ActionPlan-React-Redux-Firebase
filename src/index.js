@@ -5,10 +5,11 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import rootReducer from "./store/reducers/rootReducer";
 import { Provider } from "react-redux"; // passes store into our App
+import thunk from "redux-thunk";
 
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 //Create Redux store, pass in rootReducer which associates reducer with the store
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
