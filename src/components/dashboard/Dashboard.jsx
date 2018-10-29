@@ -7,9 +7,7 @@ import { firestoreConnect } from "react-redux-firebase";
 
 class Dashboard extends Component {
   render() {
-    // console.log(this.props);
     const { projects } = this.props;
-    console.log(this.props);
 
     return (
       <div className="dashboard container">
@@ -27,7 +25,6 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log("the state", state);
   return {
     projects: state.firestore.ordered.projects
   };
