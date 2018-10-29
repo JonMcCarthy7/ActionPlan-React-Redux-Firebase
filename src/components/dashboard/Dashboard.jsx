@@ -1,14 +1,16 @@
 import React, { Component } from "react";
-import Notifications from "./Notifications";
 import ProjectList from "../projects/ProjectList";
-import { connect } from "react-redux"; // This connects to our store
+import Notifications from "./Notifications";
+import { compose } from "redux";
+import { connect } from "react-redux";
+import { firestoreConnect } from "react-redux-firebase";
 
 class Dashboard extends Component {
-  state = {};
-
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     const { projects } = this.props;
+    console.log(this.props);
+
     return (
       <div className="dashboard container">
         <div className="row">
@@ -25,13 +27,13 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log("the state", state);
   return {
-    projects: state.project.projects
+    projects: state.firestore.ordered.projects
   };
 };
 
-const mapDispatchToProps = () => {};
-
-export default connect(mapStateToProps)(Dashboard);
-//connect is a function which returns a HOC (Higher Order Component) to take in the dashboard.
-//pass mapStateToProps to connect, so the connect func knows what to connect to and what data to get from the store
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([{ collection: "projects" }])
+)(Dashboard);
