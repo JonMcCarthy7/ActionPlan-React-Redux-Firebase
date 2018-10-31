@@ -4,15 +4,15 @@ import SignedInLinks from "./SignedInLinks";
 import SignedOutLinks from "./SignedOutLinks";
 import { connect } from "react-redux";
 
-const Navbar = props => {
+const Navbar = ({ auth }) => {
+  const links = auth.uid ? <SignedInLinks /> : <SignedOutLinks />;
   return (
     <nav className="nav-wrapper grey darken-3">
       <div className="container">
         <Link to="/" className="brand-logo">
           ActionPlan
         </Link>
-        <SignedInLinks />
-        <SignedOutLinks />
+        {links}
       </div>
     </nav>
   );
@@ -24,4 +24,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect()(Navbar);
+export default connect(mapStateToProps)(Navbar);
