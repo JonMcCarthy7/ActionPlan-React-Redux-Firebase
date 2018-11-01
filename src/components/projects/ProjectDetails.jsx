@@ -5,7 +5,6 @@ import { compose } from "redux";
 import { Redirect } from "react-router-dom";
 
 const ProjectDetails = props => {
-  const id = props.match.params.id;
   console.log("props", props.project);
   const { project, auth } = props;
   if (!auth.uid) return <Redirect to="/signin" />;
